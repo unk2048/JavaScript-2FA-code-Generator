@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <script>
+    var passCode="";
+    console.time(passCode);
+    const myArray = new Uint16Array(8);
+    //console.log(myArray);
+    let randomVals = crypto.getRandomValues(myArray)
+    //console.log(randomVals);
+    //console.log(randomVals[0]);
+    randomVals = randomVals.toString();
+    //console.log(typeof randomVals);
+    //console.log(randomVals);
+    randomVals = randomVals.replaceAll(",", "");
+    //console.log(randomVals);
+    let passcode = [];
+    for(let i=0; i<8; i++){passcode.push(randomVals[Math.floor(Math.random()*randomVals.length)])};
+    //console.log(passcode);
+    console.log(passcode.toString().replaceAll(",",""));
+    console.timeEnd(passCode);
+    </script>
+</html>
